@@ -34,6 +34,7 @@ submitBtn.onclick = () => {
   //firstname ja
   if (firstNameInput.value === "") {
     firstNameInput.classList.add("is-invalid");
+    isFirstNameOk = false;
   } else {
     firstNameInput.classList.add("is-valid");
     isFirstNameOk = true;
@@ -41,6 +42,7 @@ submitBtn.onclick = () => {
 //lastname ja
   if (lastNameInput.value === "") {
     lastNameInput.classList.add("is-invalid");
+    isLastNameOk = false;
   } else {
     lastNameInput.classList.add("is-valid");
     isLastNameOk = true;
@@ -48,20 +50,24 @@ submitBtn.onclick = () => {
 //email ja
   if (emailInput.value === "") {
     emailInput.classList.add("is-invalid");
+    isEmailNameOk = false;
   } else if(validateEmail(emailInput.value)) {
     emailInput.classList.add("is-valid");
     isEmailNameOk = true;
   } else {
     emailInput.classList.add("is-invalid");
+    isEmailNameOk = false;
   }
 //password ja
   if(passwordInput.value === ""){
     passwordInput.classList.add("is-invalid");
+    isPasswordOk = false;
   } else if (passwordInput.value.length >= 6){
     passwordInput.classList.add("is-valid");
     isPasswordOk = true;
   } else {
     passwordInput.classList.add("is-invalid");
+    isPasswordOk = false;
   }
 
   if (isFirstNameOk && isLastNameOk && isEmailNameOk && isPasswordOk) {
